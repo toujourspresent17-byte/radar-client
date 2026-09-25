@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1584 396" width="1584" height="396">
+  <rect width="1584" height="396" fill="#f7f7f5"/>
+  <rect width="792" height="396" fill="#ffffff"/>
+  <rect x="792" width="792" height="396" fill="#f7f7f5"/>
+  <line x1="792" y1="48" x2="792" y2="348" stroke="#e0e0e0" stroke-width="2"/>
+  <circle cx="792" cy="198" r="22" fill="#ffffff" stroke="#e85a2e" stroke-width="2.5"/>
+  <text x="792" y="205" text-anchor="middle" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="16" font-weight="700" fill="#e85a2e">R</text>
+  <text x="72" y="130" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="16" font-weight="600" fill="#e85a2e" letter-spacing="3">AVANT</text>
+  <text x="72" y="190" font-family="IBM Plex Sans, system-ui, sans-serif" font-size="34" font-weight="700" fill="#121214">Relances manuelles.</text>
+  <text x="72" y="238" font-family="IBM Plex Sans, system-ui, sans-serif" font-size="34" font-weight="700" fill="#121214">Cash flou. Stress.</text>
+  <text x="72" y="290" font-family="IBM Plex Sans, system-ui, sans-serif" font-size="17" fill="#6b6b76">5 a 8 h / semaine perdues sur le poste client</text>
+  <text x="860" y="130" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="16" font-weight="600" fill="#e85a2e" letter-spacing="3">AVEC RADAR CLIENT</text>
+  <text x="860" y="190" font-family="IBM Plex Sans, system-ui, sans-serif" font-size="34" font-weight="700" fill="#121214">Un seul email</text>
+  <text x="860" y="238" font-family="IBM Plex Sans, system-ui, sans-serif" font-size="34" font-weight="700" fill="#121214">chaque lundi.</text>
+  <text x="860" y="290" font-family="IBM Plex Sans, system-ui, sans-serif" font-size="17" fill="#6b6b76">3 priorites. Relances auto. Zero dashboard.</text>
+</svg>

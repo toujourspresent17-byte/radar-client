@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1584 396" width="1584" height="396">
+  <rect width="1584" height="396" fill="#f7f7f5"/>
+  <rect width="1584" height="6" fill="#e85a2e"/>
+  <rect x="72" y="150" width="48" height="48" rx="10" fill="none" stroke="#121214" stroke-width="2.5"/>
+  <text x="96" y="183" text-anchor="middle" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="24" font-weight="700" fill="#e85a2e">R</text>
+  <text x="138" y="172" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="28" font-weight="600" fill="#121214">Radar Client</text>
+  <text x="138" y="202" font-family="IBM Plex Sans, system-ui, sans-serif" font-size="15" fill="#6b6b76">Poste client · Early access</text>
+  <line x1="520" y1="100" x2="520" y2="296" stroke="#e0e0e0" stroke-width="2"/>
+  <text x="560" y="168" font-family="IBM Plex Sans, system-ui, sans-serif" font-size="32" font-weight="700" fill="#121214">Un seul email chaque lundi.</text>
+  <text x="560" y="218" font-family="IBM Plex Sans, system-ui, sans-serif" font-size="18" fill="#3d3d45">Les 3 priorites de votre poste client.</text>
+  <text x="560" y="252" font-family="IBM Plex Sans, system-ui, sans-serif" font-size="18" fill="#3d3d45">Relances · Tresorerie · Risques</text>
+  <text x="560" y="300" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="14" fill="#e85a2e">radar-client-weld.vercel.app</text>
+</svg>
