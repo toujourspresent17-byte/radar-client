@@ -1,1 +1,85 @@
-<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Radar Client</title><link rel="stylesheet" href="/styles.css"/></head><body><p style="padding:40px;font-family:sans-serif">Deploiement en cours — rechargez dans une minute.</p><script>location.href='/';</script></body></html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Radar Client — Un seul email chaque lundi</title>
+<meta name="description" content="Radar Client : DAF virtuel. Relances, tresorerie, risques. Un email chaque lundi."/>
+<meta name="theme-color" content="#0e1015"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/styles.css"/>
+</head>
+<body>
+<nav><div class="nav-inner">
+<a href="/" class="logo"><span class="logo-mark">R</span> Radar Client</a>
+<button class="nav-toggle" type="button" onclick="document.querySelector('.nav-links').classList.toggle('open')">Menu</button>
+<div class="nav-links">
+<a href="/produit.html">Produit</a>
+<a href="/obtenir.html">Comment obtenir</a>
+<a href="/ecosysteme.html">Ecosysteme</a>
+<a href="/integrations.html">Integrations</a>
+<a href="/tarifs.html">Tarifs</a>
+<a href="/docs/">Docs</a>
+<a href="/blog/">Blog</a>
+<a href="/#newsletter">Newsletter</a>
+<a class="nav-cta" href="/#audit">Audit gratuit</a>
+</div></div></nav>
+<header class="hero">
+<div class="hero-canvas-wrap" aria-hidden="true"><canvas id="wave"></canvas></div>
+<div class="wrap hero-content">
+<p class="eyebrow">Poste client · Automatise · Simple</p>
+<h1>Un seul email<br>chaque <em>lundi</em>.</h1>
+<p class="hero-sub">Les 3 priorites de votre poste client : relances, tresorerie et risques. Sans ouvrir de logiciel.</p>
+<p class="hero-note">Vous lisez. Vous agissez. Radar s'occupe du reste.</p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="/#audit">Reserver un audit gratuit 30 min</a>
+<a class="btn btn-ghost" href="/produit.html">Voir le produit</a>
+</div></div></header>
+<section><div class="wrap">
+<p class="section-label">En bref</p>
+<h2>Temps. Cash. Tranquillite.</h2>
+<p class="section-intro">Ce que les dirigeants TPE et PME gagnent vraiment.</p>
+<div class="grid-3">
+<div class="card"><p class="card-num">01</p><h3>Zero heure de relance manuelle</h3><p>Fini les 5 a 8 heures par semaine a courir apres les reglements.</p></div>
+<div class="card"><p class="card-num">02</p><h3>Trois priorites. Pas cinquante lignes Excel.</h3><p>Un email clair chaque lundi. Vous savez exactement quoi faire.</p></div>
+<div class="card"><p class="card-num">03</p><h3>Objectif : moins de jours de DSO</h3><p>Moins d'impayes oublies. Anticipation 30 / 60 / 90 jours.</p></div>
+</div>
+<div style="margin-top:28px"><a class="btn btn-ghost" href="/produit.html">Decouvrir le produit</a></div>
+</div></section>
+<section id="newsletter"><div class="wrap"><div class="panel"><div class="panel-grid">
+<div>
+<p class="section-label">Newsletter</p>
+<h2>Un email de temps en temps. Pas de spam.</h2>
+<p style="color:var(--text-muted);margin-bottom:20px">Nouveautes produit, notes sur le poste client.</p>
+<form class="form" onsubmit="return nl(event)">
+<div><label for="nl-email">Email</label><input id="nl-email" type="email" required placeholder="vous@entreprise.fr"/></div>
+<button type="submit" class="btn btn-primary">S'inscrire</button>
+<p id="nl-ok" class="form-ok">Merci. Vous etes inscrit.</p>
+</form></div>
+<div id="audit">
+<p class="section-label">Audit gratuit</p>
+<h2>30 minutes pour voir si Radar vous fait gagner du temps et du cash</h2>
+<p style="color:var(--text-muted);margin-bottom:20px">Sans engagement.</p>
+<form class="form" onsubmit="return au(event)">
+<div><label for="name">Prenom et nom</label><input id="name" required placeholder="Jean Dupont"/></div>
+<div><label for="email">Email pro</label><input id="email" type="email" required placeholder="jean@entreprise.fr"/></div>
+<div><label for="company">Entreprise</label><input id="company" required placeholder="Transport Dupont"/></div>
+<div><label for="sector">Secteur</label><select id="sector"><option>Transport / Logistique</option><option>BTP</option><option>Services</option><option>Commerce</option><option>Industrie</option><option>Autre</option></select></div>
+<div><label for="msg">Probleme actuel (optionnel)</label><textarea id="msg" placeholder="Ex. trop de relances manuelles..."></textarea></div>
+<button type="submit" class="btn btn-primary">Demander l'audit gratuit</button>
+<p id="audit-ok" class="form-ok">Merci — reponse sous 24 h ouvrees.</p>
+</form></div>
+</div></div></div></section>
+<footer><div class="wrap footer-inner">
+<div><div class="footer-brand">Radar Client</div><p>Votre DAF virtuel pour le poste client.</p></div>
+<div class="footer-links">
+<a href="/produit.html">Produit</a><a href="/docs/">Docs</a><a href="/#audit">Audit</a>
+<a href="mailto:radarclientv3@gmail.com">Contact</a>
+</div></div></footer>
+<script>
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>document.querySelector('.nav-links').classList.remove('open')));
+function nl(e){e.preventDefault();var em=document.getElementById('nl-email').value;window.location.href='mailto:radarclientv3@gmail.com?subject='+encodeURIComponent('Inscription newsletter Radar Client')+'&body='+encodeURIComponent('Email : '+em);document.getElementById('nl-ok').style.display='block';return false}
+function au(e){e.preventDefault();var n=document.getElementById('name').value,em=document.getElementById('email').value,c=document.getElementById('company').value,s=document.getElementById('sector').value,m=document.getElementById('msg').value;window.location.href='mailto:radarclientv3@gmail.com?subject='+encodeURIComponent('Audit Radar Client — '+c)+'&body='+encodeURIComponent('Prenom/Nom: '+n+'\nEmail: '+em+'\nEntreprise: '+c+'\nSecteur: '+s+'\nMessage: '+m);document.getElementById('audit-ok').style.display='block';return false}
+(function(){var canvas=document.getElementById('wave');if(!canvas)return;var ctx=canvas.getContext('2d'),dpr=Math.min(devicePixelRatio||1,2),w,h,t=0;function resize(){var p=canvas.parentElement;w=p.clientWidth;h=p.clientHeight;canvas.width=w*dpr;canvas.height=h*dpr;canvas.style.width=w+'px';canvas.style.height=h+'px';ctx.setTransform(dpr,0,0,dpr,0,0)}function draw(){t+=0.012;ctx.clearRect(0,0,w,h);var rows=Math.max(18,Math.floor(h/14)),cols=Math.max(40,Math.floor(w/9)),cw=w/cols,ch=h/rows;ctx.font='11px IBM Plex Mono,monospace';ctx.textAlign='center';ctx.textBaseline='middle';var chars=' .:-=+*#%@';for(var y=0;y<rows;y++)for(var x=0;x<cols;x++){var nx=x/cols,ny=y/rows,v=Math.sin(nx*6.2+t*1.1)*.45+Math.sin(ny*4.5-t*.9)*.35+Math.sin((nx+ny)*5+t*.7)*.25+Math.sin(nx*12-ny*8+t*1.4)*.12;v+=(ny-.35)*.55+Math.sin(nx*Math.PI)*.15;var idx=Math.max(0,Math.min(chars.length-1,Math.floor(((v+1)/2)*(chars.length-1))));var a=.08+(idx/(chars.length-1))*.42;ctx.fillStyle='rgba(255,107,74,'+a.toFixed(3)+')';ctx.fillText(chars[idx],x*cw+cw/2,y*ch+ch/2)}requestAnimationFrame(draw)}resize();addEventListener('resize',resize);draw()})();
+</script>
+</body></html>
