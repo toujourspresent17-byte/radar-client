@@ -166,7 +166,7 @@ footer{border-top:1px solid var(--bd);padding:32px 0 48px;color:var(--m);font-si
 <footer><div class="w"><strong style="color:var(--t)">Radar Client</strong> — votre DAF virtuel pour le poste client.<br/>Un seul email chaque lundi. Les 3 priorités. Rien d’autre.</div></footer>
 <script>
 document.querySelectorAll('.tb').forEach(t=>{t.addEventListener('click',()=>{document.querySelectorAll('.tb').forEach(x=>x.classList.remove('on'));document.querySelectorAll('.pn').forEach(p=>p.classList.remove('on'));t.classList.add('on');document.getElementById('p-'+t.dataset.t).classList.add('on')})});
-function hf(e){e.preventDefault();const n=document.getElementById('name').value,em=document.getElementById('email').value,c=document.getElementById('company').value,s=document.getElementById('sector').value,m=document.getElementById('msg').value;window.location.href='mailto:contact@radarclient.fr?subject='+encodeURIComponent('Audit Radar Client — '+c)+'&body='+encodeURIComponent('Prénom/Nom: '+n+'\nEmail: '+em+'\nEntreprise: '+c+'\nSecteur: '+s+'\nMessage: '+m);document.getElementById('ok').style.display='block';return false}
+function hf(e){e.preventDefault();const n=document.getElementById('name').value,em=document.getElementById('email').value,c=document.getElementById('company').value,s=document.getElementById('sector').value,m=document.getElementById('msg').value;window.location.href='mailto:radarclientv3@gmail.com?subject='+encodeURIComponent('Audit Radar Client — '+c)+'&body='+encodeURIComponent('Prénom/Nom: '+n+'\nEmail: '+em+'\nEntreprise: '+c+'\nSecteur: '+s+'\nMessage: '+m);document.getElementById('ok').style.display='block';return false}
 </script>
 </body>
 </html>
