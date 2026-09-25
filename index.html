@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Radar Client — Un seul email chaque lundi</title>
+<meta name="description" content="Radar Client : votre DAF virtuel. Relances, trésorerie et risques. Un seul email chaque lundi à 7h."/>
+<meta name="theme-color" content="#0e1015"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#0e1015;--bg-e:rgba(255,255,255,.04);--bg-h:rgba(255,255,255,.07);--bd:rgba(255,255,255,.08);--t:#f4f4f5;--m:#a1a1aa;--a:#ff6b4a;--as:rgba(255,107,74,.15);--g:rgba(18,20,28,.72);--f:Inter,system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:var(--f);background:var(--bg);color:var(--t);line-height:1.6;min-height:100vh}
+body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(rgba(255,107,74,.12) 1px,transparent 1px);background-size:28px 28px;pointer-events:none;z-index:0;opacity:.45}
+a{color:inherit;text-decoration:none}.w{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(16px);background:rgba(14,16,21,.75);border-bottom:1px solid var(--bd)}
+.ni{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:1100px;margin:0 auto;padding:0 24px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700}.lm{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--a),#ff8f6b);display:grid;place-items:center;box-shadow:0 0 24px rgba(255,107,74,.35)}
+.nl{display:flex;gap:28px;align-items:center}.nl a{color:var(--m);font-size:.9rem;font-weight:500}.nl a:hover{color:var(--t)}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 20px;border-radius:999px;font-weight:600;font-size:.95rem;border:1px solid transparent;cursor:pointer;transition:.15s}
+.bp{background:var(--a);color:#0e1015;box-shadow:0 8px 32px rgba(255,107,74,.25)}.bp:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.bg{background:transparent;color:var(--t);border-color:var(--bd)}.bg:hover{background:var(--bg-h)}
+.hero{padding:100px 0 72px;text-align:center}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;background:var(--as);color:var(--a);font-size:.78rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:28px}
+.badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--a);box-shadow:0 0 8px var(--a)}
+h1{font-size:clamp(2.4rem,6vw,3.75rem);font-weight:800;letter-spacing:-.04em;line-height:1.08;margin-bottom:20px}
+h1 .ac{color:var(--a);font-style:italic;font-weight:700}
+.hs{max-width:620px;margin:0 auto 16px;color:var(--m);font-size:1.125rem}
+.hn{color:var(--a);font-size:.95rem;font-weight:500;margin-bottom:36px}
+.hc{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.sec{padding:80px 0}.sl{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--a);margin-bottom:12px}
+h2{font-size:clamp(1.6rem,3vw,2.1rem);font-weight:700;letter-spacing:-.03em;margin-bottom:12px}
+.si{color:var(--m);max-width:560px;margin-bottom:40px}
+.qs{border:1px solid var(--bd);border-radius:18px;background:var(--g);backdrop-filter:blur(20px);overflow:hidden}
+.qt{display:flex;gap:4px;padding:12px 16px;border-bottom:1px solid var(--bd);background:rgba(0,0,0,.25);overflow-x:auto}
+.tb{padding:8px 16px;border-radius:8px;border:none;background:transparent;color:var(--m);font-family:inherit;font-size:.88rem;font-weight:600;cursor:pointer;white-space:nowrap}
+.tb.on{background:var(--bg-h);color:var(--t);box-shadow:inset 0 -2px 0 var(--a)}
+.pn{display:none;padding:28px}.pn.on{display:block}.pn h3{font-size:1.15rem;margin-bottom:8px}.pn p{color:var(--m);margin-bottom:20px;max-width:640px}
+.st{display:grid;gap:14px}.sp{display:grid;grid-template-columns:36px 1fr;gap:14px;padding:16px;border-radius:12px;background:var(--bg-e);border:1px solid var(--bd)}
+.sn{width:36px;height:36px;border-radius:10px;background:var(--as);color:var(--a);display:grid;place-items:center;font-weight:700;font-size:.9rem}
+.sp strong{display:block;margin-bottom:4px}.sp span{color:var(--m);font-size:.92rem}
+.g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.cd{padding:24px;border-radius:14px;background:var(--bg-e);border:1px solid var(--bd)}.cd:hover{border-color:rgba(255,107,74,.35)}
+.ci{width:40px;height:40px;border-radius:10px;background:var(--as);display:grid;place-items:center;margin-bottom:14px;font-size:1.2rem}
+.cd h3{font-size:1.05rem;margin-bottom:8px}.cd p{color:var(--m);font-size:.92rem}
+table.cp{width:100%;border-collapse:collapse;font-size:.95rem}
+.cp th,.cp td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--bd)}
+.cp th{color:var(--m);font-weight:500;font-size:.85rem}.cp td:last-child{color:var(--a);font-weight:600}
+.em{max-width:560px;margin:0 auto;border-radius:16px;border:1px solid var(--bd);background:#12141c;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.45)}
+.eb{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--bd);background:rgba(255,255,255,.03)}
+.d{width:10px;height:10px;border-radius:50%}.dr{background:#ff5f57}.dy{background:#febc2e}.dg{background:#28c840}
+.emeta{padding:16px 20px;border-bottom:1px solid var(--bd);font-size:.85rem;color:var(--m)}.emeta strong{color:var(--t)}
+.ebody{padding:24px 20px;font-size:.95rem}.ebody h4{margin-bottom:12px}.ebody ul{margin:12px 0 16px 18px;color:var(--m)}.ebody li{margin-bottom:6px}
+.pr{display:inline-block;padding:2px 8px;border-radius:6px;background:var(--as);color:var(--a);font-size:.75rem;font-weight:700;margin-right:6px}
+.pc{max-width:420px;margin:0 auto;padding:32px;border-radius:20px;border:1px solid rgba(255,107,74,.35);background:linear-gradient(180deg,rgba(255,107,74,.08),transparent);text-align:center}
+.am{font-size:3rem;font-weight:800;letter-spacing:-.04em;margin:8px 0 4px}.am span{font-size:1rem;font-weight:500;color:var(--m)}
+.pl{list-style:none;text-align:left;margin:24px 0}.pl li{padding:10px 0;border-bottom:1px solid var(--bd);color:var(--m);font-size:.95rem;display:flex;gap:10px}.pl li::before{content:'✓';color:var(--a);font-weight:700}
+.cta{margin:40px 0 80px;padding:48px 32px;border-radius:20px;text-align:center;background:radial-gradient(ellipse at top,rgba(255,107,74,.18),transparent 60%),var(--bg-e);border:1px solid var(--bd)}
+.cta p{color:var(--m);margin-bottom:24px}
+.fm{max-width:440px;margin:0 auto;display:grid;gap:12px;text-align:left}
+.fm label{font-size:.85rem;color:var(--m);font-weight:500}
+.fm input,.fm select,.fm textarea{width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--bd);background:rgba(0,0,0,.35);color:var(--t);font-family:inherit;font-size:.95rem}
+.fm input:focus,.fm select:focus,.fm textarea:focus{outline:none;border-color:var(--a);box-shadow:0 0 0 3px var(--as)}
+.fm textarea{min-height:90px;resize:vertical}.fm .btn{width:100%;margin-top:4px}
+footer{border-top:1px solid var(--bd);padding:32px 0 48px;color:var(--m);font-size:.85rem;text-align:center}
+@media(max-width:720px){.nl{display:none}.hero{padding:72px 0 48px}.pn{padding:20px}}
+</style>
+</head>
+<body>
+<nav><div class="ni"><a href="#" class="logo"><span class="lm">📡</span> Radar Client</a>
+<div class="nl"><a href="#comment">Comment ça marche</a><a href="#exemple">Exemple</a><a href="#tarifs">Tarifs</a><a href="#pour-qui">Pour qui</a><a class="btn bp" href="#audit" style="padding:8px 16px;font-size:.85rem">Audit gratuit</a></div></div></nav>
+<header class="hero w"><div class="badge">Poste client · Automatisé · Simple</div>
+<h1>Un seul email<br>chaque <span class="ac">lundi</span>.</h1>
+<p class="hs">Les 3 priorités de votre poste client : relances, trésorerie et risques. Sans ouvrir de logiciel. Sans tableau Excel.</p>
+<p class="hn">Vous lisez. Vous agissez. Radar s’occupe du reste.</p>
+<div class="hc"><a class="btn bp" href="#audit">Réserver un audit gratuit 30 min</a><a class="btn bg" href="#exemple">Voir un exemple d’email</a></div></header>
+<section class="sec w" id="comment"><div class="sl">Quick start</div><h2>Comment ça marche</h2>
+<p class="si">Trois étapes. Pas de formation longue. Pas de logiciel à apprendre.</p>
+<div class="qs"><div class="qt" role="tablist">
+<button class="tb on" data-t="demarrer">Démarrer</button>
+<button class="tb" data-t="automatiser">Automatiser</button>
+<button class="tb" data-t="lundi">Chaque lundi</button>
+<button class="tb" data-t="logistique">Logistique</button></div>
+<div class="pn on" id="p-demarrer"><h3>On branche vos données. Vous n’y touchez plus.</h3>
+<p>En 2–3 jours, on connecte vos factures et devis. Ensuite, tout tourne en automatique.</p>
+<div class="st">
+<div class="sp"><div class="sn">1</div><div><strong>Audit gratuit 30 min</strong><span>On regarde votre poste client : retards, volume, outils actuels.</span></div></div>
+<div class="sp"><div class="sn">2</div><div><strong>Setup (2–3 jours)</strong><span>Base clients, factures, devis. Vous validez. Rien à installer de votre côté.</span></div></div>
+<div class="sp"><div class="sn">3</div><div><strong>Premier briefing le lundi suivant</strong><span>À 7h, un email clair avec les 3 actions prioritaires de la semaine.</span></div></div>
+</div></div>
+<div class="pn" id="p-automatiser"><h3>Ce qui tourne tout seul</h3>
+<p>Radar envoie les relances, calcule les risques et anticipe la trésorerie.</p>
+<div class="st">
+<div class="sp"><div class="sn">①</div><div><strong>Relances devis & factures</strong><span>Ton adapté au client et au retard. Suivi automatique.</span></div></div>
+<div class="sp"><div class="sn">②</div><div><strong>Scoring risque client</strong><span>Qui paie mal ? Qui met la trésorerie en danger ?</span></div></div>
+<div class="sp"><div class="sn">③</div><div><strong>Prévision 30 / 60 / 90 jours</strong><span>Encours et cash attendu, sans tableur.</span></div></div>
+</div></div>
+<div class="pn" id="p-lundi"><h3>Le Cerveau : un seul email à lire</h3>
+<p>Chaque lundi à 7h, Radar envoie LE SEUL message utile de la semaine. Lisible en 90 secondes.</p>
+<div class="st">
+<div class="sp"><div class="sn">1</div><div><strong>Priorité de la semaine</strong><span>Les 3 actions qui comptent vraiment.</span></div></div>
+<div class="sp"><div class="sn">2</div><div><strong>Trésorerie & clients</strong><span>Qui doit, combien, depuis quand.</span></div></div>
+<div class="sp"><div class="sn">3</div><div><strong>Décisions en attente</strong><span>Ce qui bloque encore (sans jargon).</span></div></div>
+</div></div>
+<div class="pn" id="p-logistique"><h3>Pensé aussi pour le transport & la logistique</h3>
+<p>Chargeurs en retard, délais longs, volume de factures élevé : Radar relance pour vous.</p>
+<div class="st">
+<div class="sp"><div class="sn">🚛</div><div><strong>Vos chargeurs payent en retard ?</strong><span>Relances automatiques, sans y passer vos soirées.</span></div></div>
+<div class="sp"><div class="sn">📊</div><div><strong>Qui met la trésorerie en danger ?</strong><span>Chaque lundi, les clients à risque en clair.</span></div></div>
+<div class="sp"><div class="sn">⏱</div><div><strong>Moins de relances, plus d’exploitation</strong><span>Le dirigeant récupère du temps pour le terrain.</span></div></div>
+</div></div></div></section>
+<section class="sec w"><div class="sl">Pourquoi Radar</div><h2>Temps. Cash. Tranquillité.</h2>
+<p class="si">Ce que les dirigeants TPE / PME gagnent vraiment.</p>
+<div class="g3">
+<div class="cd"><div class="ci">⏱</div><h3>0 h de relance manuelle</h3><p>Fini les 5 à 8 heures par semaine à courir après les règlements.</p></div>
+<div class="cd"><div class="ci">🎯</div><h3>3 priorités. Pas 50 lignes Excel.</h3><p>Un email clair. Vous savez quoi faire ce lundi, point.</p></div>
+<div class="cd"><div class="ci">💶</div><h3>Objectif −10 à −20 jours de DSO</h3><p>Moins d’impayés oubliés. Plus de cash dans la caisse.</p></div>
+<div class="cd"><div class="ci">😌</div><h3>Plus d’oubli, moins de stress</h3><p>Radar n’oublie pas. C’est écrit noir sur blanc chaque lundi.</p></div>
+</div></section>
+<section class="sec w"><div class="sl">Différence</div><h2>Pas un énième tableau de bord</h2>
+<p class="si">Les logiciels classiques vous demandent d’ouvrir un outil. Radar vient à vous.</p>
+<div class="cd" style="overflow-x:auto"><table class="cp"><thead><tr><th></th><th>Logiciels classiques</th><th>Radar Client</th></tr></thead><tbody>
+<tr><td>Usage</td><td>Vous ouvrez un dashboard</td><td>L’email vient à vous</td></tr>
+<tr><td>Approche</td><td>Self-serve froid</td><td>Accompagnement humain</td></tr>
+<tr><td>Complexité</td><td>Beaucoup de menus</td><td>Ultra simple</td></tr>
+<tr><td>Résultat</td><td>Données à interpréter</td><td>3 actions prioritaires</td></tr>
+</tbody></table></div></section>
+<section class="sec w" id="exemple"><div class="sl">Exemple</div><h2>À quoi ressemble l’email du lundi</h2>
+<p class="si" style="margin-left:auto;margin-right:auto;text-align:center">Lisible en 90 secondes. Français simple. Zéro jargon.</p>
+<div class="em"><div class="eb"><span class="d dr"></span><span class="d dy"></span><span class="d dg"></span>
+<span style="margin-left:12px;color:var(--m);font-size:.8rem">Votre briefing Radar — Semaine du 29 sept.</span></div>
+<div class="emeta">De : <strong>Radar Client</strong> · À : <strong>vous@entreprise.fr</strong> · 7h00</div>
+<div class="ebody"><h4>Bonjour,</h4><p>Voici vos 3 priorités cette semaine.</p>
+<p style="margin-top:16px"><span class="pr">1</span> <strong>Relancer Transport Dupont</strong> — 8 400 €, 22 jours de retard.</p>
+<p><span class="pr">2</span> <strong>Suivre le devis Martin SA</strong> — 12 000 € en attente depuis 14 jours.</p>
+<p><span class="pr">3</span> <strong>Surveiller LogiOuest</strong> — score risque en baisse (38/100).</p>
+<ul><li>Encours clients : 47 200 €</li><li>Prévu encaissé 30 j : ~28 000 €</li><li>2 factures à risque cette semaine</li></ul>
+<p style="color:var(--m);font-size:.9rem">Vous n’avez rien d’autre à faire. Radar a déjà préparé les relances.</p></div></div>
+<div style="text-align:center;margin-top:28px"><a class="btn bp" href="#audit">Je veux le même</a></div></section>
+<section class="sec w" id="pour-qui"><div class="sl">Pour qui</div><h2>TPE / PME qui perdent du temps sur le poste client</h2>
+<p class="si">Dirigeants et responsables admin encore dans le quotidien.</p>
+<div class="g3">
+<div class="cd"><div class="ci">🚛</div><h3>Transport & logistique</h3><p>Transporteurs, commissionnaires, entrepôts. Chargeurs lents, volume de factures élevé.</p></div>
+<div class="cd"><div class="ci">🏗️</div><h3>BTP & services</h3><p>Devis en attente, acomptes, clients qui traînent.</p></div>
+<div class="cd"><div class="ci">🏪</div><h3>Commerce & industrie</h3><p>PME 5–50 salariés. Besoin de clarté, pas de complexité.</p></div>
+</div></section>
+<section class="sec w" id="tarifs"><div class="sl">Tarifs</div><h2 style="text-align:center">Une offre simple</h2>
+<p class="si" style="margin-left:auto;margin-right:auto;text-align:center">Socle Finance + Cerveau. Tout ce qu’il faut pour démarrer.</p>
+<div class="pc"><div style="color:var(--a);font-weight:700;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase">Socle + Cerveau</div>
+<div class="am">349 € <span>/ mois</span></div>
+<p style="color:var(--m);font-size:.9rem">+ setup unique 1 000 – 1 500 € · engagement 3 mois</p>
+<ul class="pl"><li>Relances devis & factures automatiques</li><li>Scoring risque client</li><li>Prévision trésorerie 30 / 60 / 90 j</li><li>Email Cerveau chaque lundi à 7h</li><li>Accompagnement humain inclus</li></ul>
+<a class="btn bp" href="#audit" style="width:100%">Réserver l’audit gratuit</a></div></section>
+<section class="w" id="audit"><div class="cta"><div class="sl">Audit gratuit</div>
+<h2>30 minutes pour voir si Radar vous fait gagner du temps et du cash</h2>
+<p>Sans engagement. On regarde votre situation. Vous décidez ensuite.</p>
+<form class="fm" onsubmit="return hf(event)">
+<div><label for="name">Prénom & nom</label><input id="name" required placeholder="Jean Dupont"/></div>
+<div><label for="email">Email pro</label><input id="email" type="email" required placeholder="jean@entreprise.fr"/></div>
+<div><label for="company">Entreprise</label><input id="company" required placeholder="Transport Dupont"/></div>
+<div><label for="sector">Secteur</label><select id="sector"><option>Transport / Logistique</option><option>BTP</option><option>Services</option><option>Commerce</option><option>Industrie</option><option>Autre</option></select></div>
+<div><label for="msg">En 2 mots : votre problème actuel (optionnel)</label><textarea id="msg" placeholder="Ex. trop de relances manuelles, DSO à 70 jours…"></textarea></div>
+<button type="submit" class="btn bp">Demander l’audit gratuit</button>
+<p id="ok" style="display:none;color:var(--a);text-align:center;font-size:.9rem">Merci — on vous répond sous 24 h ouvrées.</p>
+</form></div></section>
+<footer><div class="w"><strong style="color:var(--t)">Radar Client</strong> — votre DAF virtuel pour le poste client.<br/>Un seul email chaque lundi. Les 3 priorités. Rien d’autre.</div></footer>
+<script>
+document.querySelectorAll('.tb').forEach(t=>{t.addEventListener('click',()=>{document.querySelectorAll('.tb').forEach(x=>x.classList.remove('on'));document.querySelectorAll('.pn').forEach(p=>p.classList.remove('on'));t.classList.add('on');document.getElementById('p-'+t.dataset.t).classList.add('on')})});
+function hf(e){e.preventDefault();const n=document.getElementById('name').value,em=document.getElementById('email').value,c=document.getElementById('company').value,s=document.getElementById('sector').value,m=document.getElementById('msg').value;window.location.href='mailto:contact@radarclient.fr?subject='+encodeURIComponent('Audit Radar Client — '+c)+'&body='+encodeURIComponent('Prénom/Nom: '+n+'\nEmail: '+em+'\nEntreprise: '+c+'\nSecteur: '+s+'\nMessage: '+m);document.getElementById('ok').style.display='block';return false}
+</script>
+</body>
+</html>
