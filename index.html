@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Radar Client — Un seul email chaque lundi</title>
-<meta name="description" content="Radar Client : DAF virtuel. Relances, tresorerie, risques. Un email chaque lundi."/>
+<title>Radar Client — Early Access | Un seul email chaque lundi</title>
+<meta name="description" content="Early access Radar Client. DAF virtuel poste client. Relances, tresorerie, risques. Un email chaque lundi."/>
 <meta name="theme-color" content="#0e1015"/>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="/styles.css"/>
@@ -14,72 +14,74 @@
 <a href="/" class="logo"><span class="logo-mark">R</span> Radar Client</a>
 <button class="nav-toggle" type="button" onclick="document.querySelector('.nav-links').classList.toggle('open')">Menu</button>
 <div class="nav-links">
-<a href="/produit.html">Produit</a>
-<a href="/obtenir.html">Comment obtenir</a>
-<a href="/ecosysteme.html">Ecosysteme</a>
-<a href="/integrations.html">Integrations</a>
-<a href="/tarifs.html">Tarifs</a>
-<a href="/docs/">Docs</a>
-<a href="/blog/">Blog</a>
-<a href="/#newsletter">Newsletter</a>
-<a class="nav-cta" href="/#audit">Audit gratuit</a>
+<a href="/#vision">Vision</a>
+<a href="/#produit">Produit</a>
+<a href="/#feedback">Votre avis</a>
+<a class="nav-cta" href="/#early">Early access</a>
 </div></div></nav>
 <header class="hero">
 <div class="hero-canvas-wrap" aria-hidden="true"><canvas id="wave"></canvas></div>
 <div class="wrap hero-content">
-<p class="eyebrow">Poste client · Automatise · Simple</p>
+<p class="eyebrow">Early access · Places limitees</p>
 <h1>Un seul email<br>chaque <em>lundi</em>.</h1>
-<p class="hero-sub">Les 3 priorites de votre poste client : relances, tresorerie et risques. Sans ouvrir de logiciel.</p>
-<p class="hero-note">Vous lisez. Vous agissez. Radar s'occupe du reste.</p>
+<p class="hero-sub">Les 3 priorites de votre poste client : relances, tresorerie et risques. Sans ouvrir de logiciel. Sans tableau Excel.</p>
+<p class="hero-note">Radar Client est en early access. On construit avec les premiers dirigeants qui ont vraiment mal au cash.</p>
 <div class="hero-actions">
-<a class="btn btn-primary" href="/#audit">Reserver un audit gratuit 30 min</a>
-<a class="btn btn-ghost" href="/produit.html">Voir le produit</a>
+<a class="btn btn-primary" href="/#early">Rejoindre l'early access</a>
+<a class="btn btn-ghost" href="/#feedback">Donner mon avis (2 min)</a>
 </div></div></header>
-<section><div class="wrap">
-<p class="section-label">En bref</p>
-<h2>Temps. Cash. Tranquillite.</h2>
-<p class="section-intro">Ce que les dirigeants TPE et PME gagnent vraiment.</p>
+<section id="vision"><div class="wrap">
+<p class="section-label">Vision</p>
+<h2>Le poste client ne devrait pas etre un second job.</h2>
+<p class="section-intro">Les dirigeants de TPE passent des heures a relancer. Les logiciels demandent d'ouvrir un dashboard. On fait l'inverse : un briefing clair chaque lundi a 7h, et les relances partent toutes seules.</p>
 <div class="grid-3">
-<div class="card"><p class="card-num">01</p><h3>Zero heure de relance manuelle</h3><p>Fini les 5 a 8 heures par semaine a courir apres les reglements.</p></div>
-<div class="card"><p class="card-num">02</p><h3>Trois priorites. Pas cinquante lignes Excel.</h3><p>Un email clair chaque lundi. Vous savez exactement quoi faire.</p></div>
-<div class="card"><p class="card-num">03</p><h3>Objectif : moins de jours de DSO</h3><p>Moins d'impayes oublies. Anticipation 30 / 60 / 90 jours.</p></div>
-</div>
-<div style="margin-top:28px"><a class="btn btn-ghost" href="/produit.html">Decouvrir le produit</a></div>
-</div></section>
-<section id="newsletter"><div class="wrap"><div class="panel"><div class="panel-grid">
-<div>
-<p class="section-label">Newsletter</p>
-<h2>Un email de temps en temps. Pas de spam.</h2>
-<p style="color:var(--text-muted);margin-bottom:20px">Nouveautes produit, notes sur le poste client.</p>
-<form class="form" onsubmit="return nl(event)">
-<div><label for="nl-email">Email</label><input id="nl-email" type="email" required placeholder="vous@entreprise.fr"/></div>
-<button type="submit" class="btn btn-primary">S'inscrire</button>
-<p id="nl-ok" class="form-ok">Merci. Vous etes inscrit.</p>
-</form></div>
-<div id="audit">
-<p class="section-label">Audit gratuit</p>
-<h2>30 minutes pour voir si Radar vous fait gagner du temps et du cash</h2>
-<p style="color:var(--text-muted);margin-bottom:20px">Sans engagement.</p>
-<form class="form" onsubmit="return au(event)">
-<div><label for="name">Prenom et nom</label><input id="name" required placeholder="Jean Dupont"/></div>
-<div><label for="email">Email pro</label><input id="email" type="email" required placeholder="jean@entreprise.fr"/></div>
-<div><label for="company">Entreprise</label><input id="company" required placeholder="Transport Dupont"/></div>
-<div><label for="sector">Secteur</label><select id="sector"><option>Transport / Logistique</option><option>BTP</option><option>Services</option><option>Commerce</option><option>Industrie</option><option>Autre</option></select></div>
-<div><label for="msg">Probleme actuel (optionnel)</label><textarea id="msg" placeholder="Ex. trop de relances manuelles..."></textarea></div>
-<button type="submit" class="btn btn-primary">Demander l'audit gratuit</button>
-<p id="audit-ok" class="form-ok">Merci — reponse sous 24 h ouvrees.</p>
-</form></div>
-</div></div></div></section>
+<div class="card"><p class="card-num">01</p><h3>Vous lisez 90 secondes</h3><p>3 priorites. Encours. Clients a risque. Rien d'autre.</p></div>
+<div class="card"><p class="card-num">02</p><h3>Radar relance pour vous</h3><p>Devis et factures. Ton adapte. Suivi automatique.</p></div>
+<div class="card"><p class="card-num">03</p><h3>On construit avec vous</h3><p>Early access = votre feedback oriente le produit.</p></div>
+</div></div></section>
+<section id="produit" style="background:var(--bg-soft)"><div class="wrap">
+<p class="section-label">Ce qui tourne deja</p>
+<h2>Socle early access</h2>
+<p class="section-intro">Relances automatiques, scoring risque, prevision 30/60/90 j, email Cerveau chaque lundi. Setup en 2–3 jours.</p>
+<div class="grid-2">
+<div class="card"><h3>Pour qui</h3><p>Dirigeants TPE / PME B2B (5–50 salaries) : transport, BTP, services, commerce. Encore dans le terrain.</p></div>
+<div class="card"><h3>Ce que ce n'est pas</h3><p>Pas un remplacement de Pennylane, Sellsy ou Agicap. Un complement : priorisation + relances + clarte.</p></div>
+</div></div></section>
+<section id="early"><div class="wrap"><div class="panel">
+<p class="section-label">Early access</p>
+<h2>Rejoindre la liste</h2>
+<p style="color:var(--text-muted);margin-bottom:20px;max-width:520px">Places limitees. On priorise les dirigeants avec un vrai volume de factures B2B et un feedback honnete.</p>
+<form class="form" style="max-width:440px" onsubmit="return early(event)">
+<div><label for="e-name">Prenom et nom</label><input id="e-name" required placeholder="Jean Dupont"/></div>
+<div><label for="e-email">Email pro</label><input id="e-email" type="email" required placeholder="jean@entreprise.fr"/></div>
+<div><label for="e-company">Entreprise</label><input id="e-company" required placeholder="Transport Dupont"/></div>
+<div><label for="e-sector">Secteur</label><select id="e-sector"><option>Transport / Logistique</option><option>BTP</option><option>Services</option><option>Commerce</option><option>Industrie</option><option>Autre</option></select></div>
+<div><label for="e-vol">Volume factures clients / mois</label><select id="e-vol"><option>Moins de 10</option><option>10–30</option><option>30–100</option><option>Plus de 100</option></select></div>
+<button type="submit" class="btn btn-primary">Demander l'early access</button>
+<p id="e-ok" class="form-ok">Merci. On vous repond sous 48 h.</p>
+</form></div></div></section>
+<section id="feedback" style="background:var(--bg-soft)"><div class="wrap"><div class="panel">
+<p class="section-label">Votre avis</p>
+<h2>Qu'est-ce qui compterait vraiment pour vous ?</h2>
+<p style="color:var(--text-muted);margin-bottom:20px;max-width:560px">2 minutes. Votre retour oriente ce qu'on construit.</p>
+<form class="form" style="max-width:560px" onsubmit="return fb(event)">
+<div><label for="f-email">Email</label><input id="f-email" type="email" required placeholder="vous@entreprise.fr"/></div>
+<div><label for="f-value">Que pensez-vous de la proposition : un seul email chaque lundi avec 3 priorites + relances auto ?</label><textarea id="f-value" required placeholder="Utile / trop simple / j'ai deja un outil / le prix..."></textarea></div>
+<div><label for="f-want">Qu'est-ce que vous voulez que le produit ait en plus ?</label><textarea id="f-want" required placeholder="SMS, lien de paiement, export comptable, multi-societes..."></textarea></div>
+<div><label for="f-block">Qu'est-ce qui vous empecherait de l'essayer aujourd'hui ?</label><textarea id="f-block" placeholder="Prix, confiance, pas le temps, deja un outil..."></textarea></div>
+<button type="submit" class="btn btn-primary">Envoyer mon avis</button>
+<p id="f-ok" class="form-ok">Merci. Votre retour compte vraiment.</p>
+</form></div></div></section>
 <footer><div class="wrap footer-inner">
-<div><div class="footer-brand">Radar Client</div><p>Votre DAF virtuel pour le poste client.</p></div>
+<div><div class="footer-brand">Radar Client</div><p>Early access — un seul email chaque lundi.</p></div>
 <div class="footer-links">
-<a href="/produit.html">Produit</a><a href="/docs/">Docs</a><a href="/#audit">Audit</a>
+<a href="/#vision">Vision</a><a href="/#early">Early access</a><a href="/#feedback">Avis</a>
 <a href="mailto:radarclientv3@gmail.com">Contact</a>
 </div></div></footer>
 <script>
 document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>document.querySelector('.nav-links').classList.remove('open')));
-function nl(e){e.preventDefault();var em=document.getElementById('nl-email').value;window.location.href='mailto:radarclientv3@gmail.com?subject='+encodeURIComponent('Inscription newsletter Radar Client')+'&body='+encodeURIComponent('Email : '+em);document.getElementById('nl-ok').style.display='block';return false}
-function au(e){e.preventDefault();var n=document.getElementById('name').value,em=document.getElementById('email').value,c=document.getElementById('company').value,s=document.getElementById('sector').value,m=document.getElementById('msg').value;window.location.href='mailto:radarclientv3@gmail.com?subject='+encodeURIComponent('Audit Radar Client — '+c)+'&body='+encodeURIComponent('Prenom/Nom: '+n+'\nEmail: '+em+'\nEntreprise: '+c+'\nSecteur: '+s+'\nMessage: '+m);document.getElementById('audit-ok').style.display='block';return false}
-(function(){var canvas=document.getElementById('wave');if(!canvas)return;var ctx=canvas.getContext('2d'),dpr=Math.min(devicePixelRatio||1,2),w,h,t=0;function resize(){var p=canvas.parentElement;w=p.clientWidth;h=p.clientHeight;canvas.width=w*dpr;canvas.height=h*dpr;canvas.style.width=w+'px';canvas.style.height=h+'px';ctx.setTransform(dpr,0,0,dpr,0,0)}function draw(){t+=0.012;ctx.clearRect(0,0,w,h);var rows=Math.max(18,Math.floor(h/14)),cols=Math.max(40,Math.floor(w/9)),cw=w/cols,ch=h/rows;ctx.font='11px IBM Plex Mono,monospace';ctx.textAlign='center';ctx.textBaseline='middle';var chars=' .:-=+*#%@';for(var y=0;y<rows;y++)for(var x=0;x<cols;x++){var nx=x/cols,ny=y/rows,v=Math.sin(nx*6.2+t*1.1)*.45+Math.sin(ny*4.5-t*.9)*.35+Math.sin((nx+ny)*5+t*.7)*.25+Math.sin(nx*12-ny*8+t*1.4)*.12;v+=(ny-.35)*.55+Math.sin(nx*Math.PI)*.15;var idx=Math.max(0,Math.min(chars.length-1,Math.floor(((v+1)/2)*(chars.length-1))));var a=.08+(idx/(chars.length-1))*.42;ctx.fillStyle='rgba(255,107,74,'+a.toFixed(3)+')';ctx.fillText(chars[idx],x*cw+cw/2,y*ch+ch/2)}requestAnimationFrame(draw)}resize();addEventListener('resize',resize);draw()})();
+function early(e){e.preventDefault();var n=document.getElementById('e-name').value,em=document.getElementById('e-email').value,c=document.getElementById('e-company').value,s=document.getElementById('e-sector').value,v=document.getElementById('e-vol').value;window.location.href='mailto:radarclientv3@gmail.com?subject='+encodeURIComponent('Early access Radar Client — '+c)+'&body='+encodeURIComponent('Prenom/Nom: '+n+'\nEmail: '+em+'\nEntreprise: '+c+'\nSecteur: '+s+'\nVolume: '+v);document.getElementById('e-ok').style.display='block';return false}
+function fb(e){e.preventDefault();var em=document.getElementById('f-email').value,val=document.getElementById('f-value').value,want=document.getElementById('f-want').value,block=document.getElementById('f-block').value;window.location.href='mailto:radarclientv3@gmail.com?subject='+encodeURIComponent('Avis produit Radar Client')+'&body='+encodeURIComponent('Email: '+em+'\n\nProposition de valeur:\n'+val+'\n\nFonctionnalites souhaitees:\n'+want+'\n\nPoint bloquant:\n'+block);document.getElementById('f-ok').style.display='block';return false}
+(function(){var canvas=document.getElementById('wave');if(!canvas)return;var ctx=canvas.getContext('2d'),dpr=Math.min(devicePixelRatio||1,2),w,h,t=0;function resize(){var p=canvas.parentElement;w=p.clientWidth;h=p.clientHeight;canvas.width=w*dpr;canvas.height=h*dpr;canvas.style.width=w+'px';canvas.style.height=h+'px';ctx.setTransform(dpr,0,0,dpr,0,0)}function draw(){t+=0.012;ctx.clearRect(0,0,w,h);var rows=Math.max(18,Math.floor(h/14)),cols=Math.max(40,Math.floor(w/9)),cw=w/cols,ch=h/rows;ctx.font='11px IBM Plex Mono,monospace';ctx.textAlign='center';ctx.textBaseline='middle';var chars=' .:-=+*#%@';for(var y=0;y<rows;y++)for(var x=0;x<cols;x++){var nx=x/cols,ny=y/rows,v=Math.sin(nx*6.2+t*1.1)*.45+Math.sin(ny*4.5-t*.9)*.35+Math.sin((nx+ny)*5+t*.7)*.25;v+=(ny-.35)*.55;var idx=Math.max(0,Math.min(chars.length-1,Math.floor(((v+1)/2)*(chars.length-1))));var a=.08+(idx/(chars.length-1))*.42;ctx.fillStyle='rgba(255,107,74,'+a.toFixed(3)+')';ctx.fillText(chars[idx],x*cw+cw/2,y*ch+ch/2)}requestAnimationFrame(draw)}resize();addEventListener('resize',resize);draw()})();
 </script>
 </body></html>
