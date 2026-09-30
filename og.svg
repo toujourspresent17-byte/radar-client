@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#e6e4df"/>
+<rect x="48" y="48" width="1104" height="534" rx="24" fill="#faf9f7" stroke="#0a0a0c" stroke-width="3"/>
+<text x="100" y="220" font-family="ui-monospace,monospace" font-size="28" fill="#d4451a" font-weight="600">RADAR CLIENT</text>
+<text x="100" y="300" font-family="system-ui,sans-serif" font-size="56" font-weight="700" fill="#0a0a0c">Poste client.</text>
+<text x="100" y="370" font-family="system-ui,sans-serif" font-size="56" font-weight="700" fill="#d4451a">Automatisé.</text>
+<text x="100" y="460" font-family="ui-monospace,monospace" font-size="22" fill="#5c5c66">3 automations · 1 email chaque lundi · 249 €/mois</text>
+</svg>
