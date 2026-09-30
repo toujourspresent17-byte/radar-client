@@ -3,14 +3,35 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
-<title>Radar Client — Arrêtez de courir après l'argent déjà facturé</title>
-<meta name="description" content="3 automatisations pour le poste client TPE/PME B2B : relance devis, relance factures, email du lundi. Moins d'Excel, plus de cash."/>
+<title>Radar Client — Automatisation poste client TPE/PME B2B</title>
+<meta name="description" content="Relance devis, relance factures et email du lundi. 3 automatisations pour encaisser plus vite sans Excel le week-end. Early access 249 €/mois."/>
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"/>
+<meta name="author" content="Radar Client"/>
 <meta name="theme-color" content="#e6e4df"/>
-<meta property="og:title" content="Radar Client — Poste client automatisé"/>
-<meta property="og:description" content="Relances + synthèse lundi. Pack niche pour dirigeants B2B."/>
+<link rel="canonical" href="https://radar-client-weld.vercel.app/"/>
+<link rel="alternate" hreflang="fr" href="https://radar-client-weld.vercel.app/"/>
+<link rel="alternate" hreflang="x-default" href="https://radar-client-weld.vercel.app/"/>
+<meta property="og:locale" content="fr_FR"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Radar Client"/>
+<meta property="og:title" content="Radar Client — Automatisation poste client TPE/PME B2B"/>
+<meta property="og:description" content="Relance devis, relance factures et email du lundi. 3 automatisations pour encaisser plus vite sans Excel le week-end. Early access 249 €/mois."/>
+<meta property="og:url" content="https://radar-client-weld.vercel.app/"/>
+<meta property="og:image" content="https://radar-client-weld.vercel.app/og.svg"/>
+<meta property="og:image:alt" content="Radar Client — automatisations poste client"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Radar Client — Automatisation poste client TPE/PME B2B"/>
+<meta name="twitter:description" content="Relance devis, relance factures et email du lundi. Early access 249 €/mois."/>
+<meta name="twitter:image" content="https://radar-client-weld.vercel.app/og.svg"/>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="apple-touch-icon" href="/favicon.svg"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="/styles.css"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Radar Client","url":"https://radar-client-weld.vercel.app/","description":"Automatisations poste client pour TPE et PME B2B en France.","inLanguage":"fr-FR","publisher":{"@type":"Organization","name":"Radar Client","url":"https://radar-client-weld.vercel.app/","email":"radarcleintv3@gmail.com"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Radar Client","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"249","priceCurrency":"EUR","availability":"https://schema.org/OnlineOnly","description":"Pack 3 automatisations poste client — early access"},"description":"Relance devis, relance factures et email de synthèse hebdomadaire pour dirigeants TPE/PME B2B.","url":"https://radar-client-weld.vercel.app/","inLanguage":"fr-FR","provider":{"@type":"Organization","name":"Radar Client","email":"radarcleintv3@gmail.com"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Qu'est-ce que Radar Client ?","acceptedAnswer":{"@type":"Answer","text":"Radar Client est un pack de 3 automatisations pour le poste client des TPE et PME B2B : relance devis, relance factures, et un email de synthèse chaque lundi."}},{"@type":"Question","name":"Combien coûte Radar Client ?","acceptedAnswer":{"@type":"Answer","text":"Le pack des 3 automatisations est proposé à 249 € par mois en early access, setup inclus."}},{"@type":"Question","name":"Radar Client remplace-t-il Pennylane ou Sellsy ?","acceptedAnswer":{"@type":"Answer","text":"Non. Radar Client est un complément : il automatise les relances et la priorisation, pas la comptabilité complète."}},{"@type":"Question","name":"Pour qui est fait Radar Client ?","acceptedAnswer":{"@type":"Answer","text":"Dirigeants de TPE et PME B2B (environ 5 à 50 salariés) avec un volume réel de devis et factures clients : transport, BTP, services, commerce."}}]}</script>
 </head>
 <body>
 <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
@@ -26,8 +47,8 @@
 </aside>
 <nav>
   <div class="nav-inner">
-    <a href="/" class="logo"><span class="logo-mark">R</span> Radar Client</a>
-    <button class="nav-toggle" type="button" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <a href="/" class="logo"><span class="logo-mark" aria-hidden="true">R</span> Radar Client</a>
+    <button class="nav-toggle" type="button" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <div class="nav-desk">
       <a href="/automations.html">3 automations</a>
       <a href="/audit.html">Audit</a>
@@ -41,8 +62,8 @@
   <div class="wrap hero-inner">
     <p class="eyebrow">Niche poste client · Early access</p>
     <h1>L'argent est facturé.<br>Il n'est pas encore <em>encaissé</em>.</h1>
-    <p class="lead">Devis qui dorment, factures en retard, dimanche soir sur Excel. Radar envoie les relances et un seul email chaque lundi avec les 3 priorités qui comptent.</p>
-    <p class="hero-note">Pack de 3 automatisations — pas un ERP de plus.</p>
+    <p class="lead">Devis qui dorment, factures en retard, dimanche soir sur Excel. Radar automatise les relances et envoie un email chaque lundi avec les 3 priorités poste client.</p>
+    <p class="hero-note">Pack de 3 automatisations pour TPE et PME B2B — pas un ERP de plus.</p>
     <div class="hero-actions">
       <a class="btn btn-primary" href="/early-access.html">Demander l'early access</a>
       <a class="btn btn-ghost" href="/automations.html">Voir les 3 automations</a>
@@ -54,6 +75,7 @@
     </div>
   </div>
 </header>
+<main>
 <section>
   <div class="wrap">
     <p class="section-label reveal">Le problème</p>
@@ -64,9 +86,9 @@
         <li><span class="x">×</span> Factures en retard sans process clair</li>
         <li><span class="x">×</span> Excel / tableaux ouverts le week-end</li>
         <li><span class="x">×</span> Outils compta puissants… mais silencieux</li>
-        <li><span class="x">×</span> Aucune vue “que faire cette semaine ?”</li>
+        <li><span class="x">×</span> Aucune vue « que faire cette semaine ? »</li>
       </ul>
-      <div class="terminal reveal reveal-d1" aria-label="Aperçu Radar">
+      <div class="terminal reveal reveal-d1" aria-label="Aperçu simulation Radar Client">
         <div class="term-bar"><span class="term-dot r"></span><span class="term-dot y"></span><span class="term-dot g"></span><span class="term-title">radar — session live</span></div>
         <div class="term-body" id="termType"></div>
       </div>
@@ -76,12 +98,12 @@
 <section class="sec-soft">
   <div class="wrap">
     <p class="section-label reveal">La solution</p>
-    <h2 class="reveal">3 automatisations. Une niche. Zéro dashboard obligatoire.</h2>
-    <p class="lead reveal" style="margin-bottom:36px">On n'automatise pas “tout”. On attaque devis, factures, et le brief du lundi.</p>
+    <h2 class="reveal">3 automatisations poste client. Une niche. Zéro dashboard obligatoire.</h2>
+    <p class="lead reveal" style="margin-bottom:36px">On n'automatise pas « tout ». On attaque devis, factures, et le brief du lundi pour accélérer l'encaissement.</p>
     <div class="grid-3">
-      <div class="card reveal reveal-d1"><span class="badge">01</span><h3>Relance devis</h3><p>Échéance proche ou dépassée. Ton adapté. Historique écrit. Jamais le mot « Relance » dans l'objet.</p></div>
-      <div class="card reveal reveal-d2"><span class="badge">02</span><h3>Relance factures</h3><p>Émises, en attente, en retard. Escalade progressive. Pas de remise promise. Ambiguïté = humain.</p></div>
-      <div class="card reveal reveal-d3"><span class="badge">03</span><h3>Cerveau — lundi</h3><p>Un email : priorité de la semaine, score risque, délais. ~90 secondes. Chiffres issus de vos données.</p></div>
+      <article class="card reveal reveal-d1"><span class="badge">01</span><h3>Relance devis</h3><p>Échéance proche ou dépassée. Ton adapté. Historique écrit. Jamais le mot « Relance » dans l'objet.</p></article>
+      <article class="card reveal reveal-d2"><span class="badge">02</span><h3>Relance factures</h3><p>Émises, en attente, en retard. Escalade progressive. Pas de remise promise. Ambiguïté = humain.</p></article>
+      <article class="card reveal reveal-d3"><span class="badge">03</span><h3>Cerveau — lundi</h3><p>Un email : priorité de la semaine, score risque, délais. ~90 secondes. Chiffres issus de vos données.</p></article>
     </div>
     <p style="margin-top:28px" class="reveal"><a class="btn btn-ghost" href="/automations.html">Détail des 3 automations →</a></p>
   </div>
@@ -98,7 +120,19 @@
     </div>
   </div>
 </section>
-<section class="sec-soft">
+<section class="sec-soft" id="faq">
+  <div class="wrap">
+    <p class="section-label reveal">FAQ</p>
+    <h2 class="reveal">Questions fréquentes</h2>
+    <div class="grid-2" style="margin-top:28px">
+      <article class="card reveal"><h3>Radar Client, c'est quoi ?</h3><p>Un pack de 3 automatisations poste client : relance devis, relance factures, email de synthèse chaque lundi. Pour encaisser plus vite sans vivre dans Excel.</p></article>
+      <article class="card reveal reveal-d1"><h3>Combien ça coûte ?</h3><p>249 € / mois en early access pour le pack des 3, setup inclus. Places limitées.</p></article>
+      <article class="card reveal"><h3>Ça remplace Pennylane / Sellsy ?</h3><p>Non. C'est un complément : priorisation et relances. Votre outil compta reste la source de vérité.</p></article>
+      <article class="card reveal reveal-d1"><h3>Pour qui ?</h3><p>Dirigeants TPE/PME B2B (5–50 salariés) avec un vrai volume de devis et factures : transport, BTP, services, commerce.</p></article>
+    </div>
+  </div>
+</section>
+<section>
   <div class="wrap">
     <div class="price-box reveal">
       <div>
@@ -111,6 +145,7 @@
     <p style="margin-top:24px;color:var(--soft);font-size:.95rem" class="reveal">Process hors pack ? <a href="/audit.html" style="color:var(--accent);text-decoration:underline">Demander un audit custom</a></p>
   </div>
 </section>
+</main>
 <footer>
   <div class="wrap footer-inner">
     <div><div class="footer-brand">Radar Client</div><p>3 automations poste client. Un email chaque lundi.</p></div>
