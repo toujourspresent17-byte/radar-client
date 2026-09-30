@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<title>3 automatisations poste client — Radar Client</title>
+<meta name="description" content="Relance devis, relance factures, email Cerveau du lundi. Détail du pack Radar Client."/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/styles.css"/>
+</head>
+<body>
+<div class="nav-overlay" id="navOverlay"></div>
+<aside class="nav-drawer" id="navDrawer" aria-label="Menu">
+  <p class="nav-drawer-label">Navigation</p>
+  <a href="/" style="--i:0">Accueil</a>
+  <a href="/automations.html" style="--i:1">3 automatisations</a>
+  <a href="/audit.html" style="--i:2">Audit custom</a>
+  <a href="/early-access.html" style="--i:3">Early access</a>
+  <a class="drawer-cta" href="/early-access.html" style="--i:4">Early access</a>
+</aside>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo"><span class="logo-mark">R</span> Radar Client</a>
+    <button class="nav-toggle" type="button" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <div class="nav-desk">
+      <a href="/automations.html" class="active">3 automations</a>
+      <a href="/audit.html">Audit</a>
+      <a class="nav-cta" href="/early-access.html">Early access</a>
+    </div>
+  </div>
+</nav>
+<div class="page-head"><div class="wrap">
+  <p class="eyebrow">Offre principale</p>
+  <h1 style="margin-top:16px">Les 3 automatisations<br>de la <em>niche</em></h1>
+  <p class="lead">Conçues pour dirigeants TPE/PME B2B (transport, BTP, services, commerce) — pas pour remplacer Pennylane ou Sellsy.</p>
+</div></div>
+<section style="padding-top:24px"><div class="wrap">
+  <div class="grid-3">
+    <div class="card reveal">
+      <span class="badge">Auto 01</span>
+      <h3>Relance devis</h3>
+      <p>Cible les devis en attente dont l'échéance approche ou est dépassée, sans commentaire récent.</p>
+      <ul>
+        <li>Ton serviable avant échéance</li>
+        <li>Urgence légère puis ferme après</li>
+        <li>Jamais « Relance » dans l'objet</li>
+        <li>Ligne d'historique dans le dossier</li>
+      </ul>
+    </div>
+    <div class="card reveal reveal-d1">
+      <span class="badge">Auto 02</span>
+      <h3>Relance factures</h3>
+      <p>Factures émises, en attente ou en retard — le suivi part sans que vous y repensiez chaque soir.</p>
+      <ul>
+        <li>Escalade progressive</li>
+        <li>Aucune remise promise auto</li>
+        <li>Montant cité seulement si seuil utile</li>
+        <li>Ambiguïté → validation humaine</li>
+      </ul>
+    </div>
+    <div class="card reveal reveal-d2">
+      <span class="badge">Auto 03</span>
+      <h3>Cerveau — email lundi</h3>
+      <p>Le seul mail à ouvrir en début de semaine pour piloter le poste client.</p>
+      <ul>
+        <li>Priorité de la semaine chiffrée</li>
+        <li>Score risque + délai moyen</li>
+        <li>~90 secondes de lecture</li>
+        <li>Pas de jargon juridique inventé</li>
+      </ul>
+    </div>
+  </div>
+  <div class="grid-2" style="margin-top:16px">
+    <div class="card reveal"><h3>Pour qui</h3><p>5–50 salariés, B2B, volume réel de devis/factures. Dirigeant encore sur le terrain.</p></div>
+    <div class="card reveal reveal-d1"><h3>Ce que ce n'est pas</h3><p>Pas un ERP. Pas de promesse “tout automatiser”. Hors pack → <a href="/audit.html" style="color:var(--accent);text-decoration:underline">audit custom</a>.</p></div>
+  </div>
+  <div class="price-box reveal">
+    <div>
+      <p class="amount">249 € <span>/ mois</span></p>
+      <p style="margin-top:6px;color:var(--soft);font-size:.85rem;font-family:var(--mono)">Les 3 · setup early access</p>
+    </div>
+    <a class="btn btn-primary" href="/early-access.html">Demander l'accès</a>
+  </div>
+</div></section>
+<footer><div class="wrap footer-inner"><div><div class="footer-brand">Radar Client</div></div>
+<div class="footer-links"><a href="/">Accueil</a><a href="/audit.html">Audit</a><a href="/early-access.html">Early access</a></div></div></footer>
+<script src="/app.js"></script>
+</body></html>
