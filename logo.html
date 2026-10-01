@@ -3,20 +3,66 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Logo Radar Client</title>
+<title>Logo Radar Client — Télécharger PNG</title>
 <style>
-body{margin:0;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
-font-family:system-ui,sans-serif;background:#e6e4df;color:#0a0a0c;gap:20px;padding:24px}
-.box{width:min(300px,80vw);height:min(300px,80vw);background:#d4451a;border-radius:28px;
-display:grid;place-items:center;box-shadow:0 12px 40px rgba(0,0,0,.18)}
-.box span{font-size:clamp(120px,40vw,180px);font-weight:800;color:#fffaf7;font-family:Arial Black,Arial,sans-serif;line-height:1}
-a{display:inline-block;background:#0a0a0c;color:#fff;padding:14px 22px;border-radius:10px;text-decoration:none;font-weight:700}
-p{color:#5c5c66;max-width:360px;text-align:center;line-height:1.5}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:20px;padding:32px;font-family:system-ui,-apple-system,sans-serif;background:#e6e4df;color:#0a0a0c}
+  h1{font-size:1.25rem;font-weight:700}
+  canvas{width:min(300px,80vw);height:min(300px,80vw);border-radius:28px;
+    box-shadow:0 12px 40px rgba(0,0,0,.18);background:#d4451a}
+  .actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+  button,a.btn{appearance:none;border:none;cursor:pointer;font:inherit;font-weight:700;
+    padding:14px 22px;border-radius:10px;text-decoration:none;display:inline-block}
+  #dl{background:#d4451a;color:#fffaf7}
+  #dl512{background:#0a0a0c;color:#fff}
+  p{color:#5c5c66;font-size:.9rem;max-width:360px;text-align:center;line-height:1.5}
 </style>
 </head>
 <body>
-<div class="box"><span>R</span></div>
-<p>Capture d’écran (Cmd+Shift+4) du carré orange, ou télécharge le SVG.</p>
-<a href="/logo.svg" download="radar-client-logo.svg">Télécharger logo.svg</a>
+  <h1>Logo Radar Client</h1>
+  <canvas id="c" width="512" height="512" aria-label="Logo R orange"></canvas>
+  <div class="actions">
+    <button type="button" id="dl">Télécharger PNG 300×300</button>
+    <button type="button" id="dl512">Télécharger PNG 512×512</button>
+  </div>
+  <p>Clique le bouton — le fichier se télécharge sans conversion SVG.</p>
+<script>
+(function(){
+  var canvas=document.getElementById('c');
+  var ctx=canvas.getContext('2d');
+  function draw(size){
+    var c=document.createElement('canvas');
+    c.width=size;c.height=size;
+    var g=c.getContext('2d');
+    g.fillStyle='#d4451a';
+    g.fillRect(0,0,size,size);
+    g.fillStyle='#fffaf7';
+    g.textAlign='center';
+    g.textBaseline='middle';
+    g.font='bold '+Math.floor(size*0.58)+'px Arial Black, Arial, Helvetica, sans-serif';
+    g.fillText('R', size/2, size/2 + size*0.03);
+    return c;
+  }
+  // preview
+  (function(){
+    var p=draw(512);
+    ctx.drawImage(p,0,0);
+  })();
+  function download(size, name){
+    var c=draw(size);
+    c.toBlob(function(blob){
+      var a=document.createElement('a');
+      a.href=URL.createObjectURL(blob);
+      a.download=name;
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(function(){URL.revokeObjectURL(a.href);a.remove()}, 500);
+    }, 'image/png');
+  }
+  document.getElementById('dl').onclick=function(){download(300,'radar-client-logo-300.png')};
+  document.getElementById('dl512').onclick=function(){download(512,'radar-client-logo-512.png')};
+})();
+</script>
 </body>
 </html>
