@@ -1,20 +1,42 @@
 (function(){
   var t=document.getElementById('navToggle'),d=document.getElementById('navDrawer'),o=document.getElementById('navOverlay');
   if(!t)return;
-  function open(){t.classList.add('is-open');d.classList.add('is-open');o.classList.add('is-open');document.body.classList.add('menu-open');t.setAttribute('aria-expanded','true')}
-  function close(){t.classList.remove('is-open');d.classList.remove('is-open');o.classList.remove('is-open');document.body.classList.remove('menu-open');t.setAttribute('aria-expanded','false')}
-  t.addEventListener('click',function(){d.classList.contains('is-open')?close():open()});
+  function open(){t.classList.add('is-open');if(d)d.classList.add('is-open');if(o)o.classList.add('is-open');document.body.classList.add('menu-open');t.setAttribute('aria-expanded','true')}
+  function close(){t.classList.remove('is-open');if(d)d.classList.remove('is-open');if(o)o.classList.remove('is-open');document.body.classList.remove('menu-open');t.setAttribute('aria-expanded','false')}
+  t.addEventListener('click',function(){d&&d.classList.contains('is-open')?close():open()});
   if(o)o.addEventListener('click',close);
   if(d)d.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close)});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
 })();
+
 (function(){
   var els=document.querySelectorAll('.reveal');
   if(!els.length)return;
-  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('visible')});return}
-  var io=new IntersectionObserver(function(ents){ents.forEach(function(en){if(en.isIntersecting){en.target.classList.add('visible');io.unobserve(en.target)}})},{threshold:.12,rootMargin:'0px 0px -32px 0px'});
-  els.forEach(function(e){io.observe(e)});
+  function show(el){el.classList.add('visible')}
+  // Fallback: show everything after 1.2s if IO never fires
+  var fallback=setTimeout(function(){els.forEach(show)},1200);
+  if(!('IntersectionObserver' in window)){els.forEach(show);clearTimeout(fallback);return}
+  var io=new IntersectionObserver(function(ents){
+    ents.forEach(function(en){
+      if(en.isIntersecting||en.intersectionRatio>0){
+        show(en.target);
+        io.unobserve(en.target);
+      }
+    });
+  },{threshold:0,rootMargin:'0px 0px -8px 0px'});
+  els.forEach(function(e){
+    // Already in viewport on load
+    var r=e.getBoundingClientRect();
+    if(r.top<window.innerHeight&&r.bottom>0){show(e);return}
+    io.observe(e);
+  });
+  // Clear fallback once majority visible
+  setTimeout(function(){
+    var n=0;els.forEach(function(e){if(e.classList.contains('visible'))n++});
+    if(n>=els.length)clearTimeout(fallback);
+  },800);
 })();
+
 (function(){
   var p=new URLSearchParams(location.search);
   var msg={early:'Merci. Demande bien reçue.',feedback:'Merci. Votre avis est arrivé.',audit:'Merci. Demande d’audit reçue.'};
@@ -25,6 +47,7 @@
     history.replaceState({},'',location.pathname);
   }
 })();
+
 (function(){
   var c=document.getElementById('matrix');if(!c)return;
   var ctx=c.getContext('2d'),dpr=Math.min(devicePixelRatio||1,2),w,h,t=0;
@@ -46,6 +69,7 @@
   }
   resize();addEventListener('resize',resize);draw();
 })();
+
 (function(){
   var el=document.getElementById('termType');if(!el)return;
   var lines=[
@@ -58,12 +82,19 @@
   ];
   var i=0,j=0,reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
   function tick(){
-    if(i>=lines.length){el.innerHTML=el.innerHTML.replace(/<span class="cursor"><\\/span>/,'')+'<span class="cursor"></span>';return}
+    if(i>=lines.length){
+      var last=el.lastChild;
+      if(last&&!el.querySelector('.cursor')){
+        var cur=document.createElement('span');cur.className='cursor';el.appendChild(cur);
+      }
+      return;
+    }
     var L=lines[i];
     if(j===0){var p=document.createElement('div');p.className=L.c;p.id='tl'+i;el.appendChild(p)}
     var p=document.getElementById('tl'+i);
     if(reduced){p.textContent=L.t;i++;j=0;setTimeout(tick,200);return}
-    p.innerHTML=L.t.slice(0,j)+'<span class="cursor"></span>';
+    p.textContent=L.t.slice(0,j);
+    var cur=document.createElement('span');cur.className='cursor';p.appendChild(cur);
     j++;
     if(j>L.t.length){p.textContent=L.t;i++;j=0;setTimeout(tick,380)}
     else setTimeout(tick,22+Math.random()*18)
