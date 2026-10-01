@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Image post LinkedIn — Radar Client</title>
+<style>
+body{margin:0;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+gap:16px;padding:24px;font-family:system-ui,sans-serif;background:#e6e4df;color:#0a0a0c}
+canvas{width:min(400px,90vw);height:auto;border-radius:12px;box-shadow:0 12px 40px rgba(0,0,0,.2)}
+button{background:#d4451a;color:#fff;border:none;padding:14px 24px;border-radius:10px;font-weight:700;font-size:1rem;cursor:pointer}
+p{color:#5c5c66;text-align:center;max-width:400px}
+</style>
+</head>
+<body>
+<h1 style="font-size:1.1rem">Image post LinkedIn</h1>
+<canvas id="c" width="1080" height="1080"></canvas>
+<button type="button" id="dl">Télécharger PNG</button>
+<p>Clique le bouton → fichier dans Téléchargements → upload LinkedIn</p>
+<script>
+(function(){
+  var c=document.getElementById('c'),g=c.getContext('2d'),W=1080;
+  function draw(){
+    g.fillStyle='#12141a';g.fillRect(0,0,W,W);
+    g.fillStyle='#0a0a0c';g.fillRect(0,0,W,90);
+    g.fillStyle='#d4451a';g.fillRect(0,88,W,6);
+    g.fillStyle='#c8cdd8';g.font='bold 26px Arial';g.fillText('RADAR // POSTE CLIENT',36,55);
+    g.fillStyle='#d4451a';g.fillText('LUNDI',920,55);
+    g.strokeStyle='#2a2e3a';g.lineWidth=3;g.strokeRect(40,120,W-80,W-240);
+    var items=['[x]  devis envoyes — jamais relances','[x]  factures en retard','[x]  excel le dimanche soir','[x]  outils compta silencieux'];
+    g.font='22px Arial';
+    items.forEach(function(t,i){
+      g.fillStyle=i<4?'#d4451a':'#5c5c66';
+      g.fillText(t,80,190+i*55);
+    });
+    g.fillStyle='#7dd3a0';g.font='bold 56px Arial';g.textAlign='center';
+    g.fillText('3 PRIORITES',W/2,520);
+    g.fillStyle='#c8cdd8';g.font='32px Arial';
+    g.fillText("C'est tout ce qu'il faut le lundi.",W/2,590);
+    g.textAlign='left';
+    // radar
+    var cx=900,cy=900,r=120;
+    g.strokeStyle='#d4451a';g.lineWidth=3;g.beginPath();g.arc(cx,cy,r,0,Math.PI*2);g.stroke();
+    g.strokeStyle='#2a2e3a';g.lineWidth=1;g.beginPath();g.arc(cx,cy,r/2,0,Math.PI*2);g.stroke();
+    g.beginPath();g.moveTo(cx-r,cy);g.lineTo(cx+r,cy);g.stroke();
+    g.beginPath();g.moveTo(cx,cy-r);g.lineTo(cx,cy+r);g.stroke();
+    g.strokeStyle='#d4451a';g.lineWidth=2;
+    for(var a=0;a<30;a+=3){
+      var aa=(40-a)*Math.PI/180;
+      g.beginPath();g.moveTo(cx,cy);g.lineTo(cx+Math.cos(aa)*(r-4),cy+Math.sin(aa)*(r-4));g.stroke();
+    }
+    [[0.5,0.55,'#7dd3a0'],[2.1,0.7,'#febc2e'],[4.0,0.4,'#d4451a']].forEach(function(p){
+      var bx=cx+p[1]*r*Math.cos(p[0]),by=cy+p[1]*r*Math.sin(p[0]);
+      g.fillStyle=p[2];g.beginPath();g.arc(bx,by,7,0,Math.PI*2);g.fill();
+    });
+    g.fillStyle='#0a0a0c';g.fillRect(0,W-90,W,90);
+    g.fillStyle='#7dd3a0';g.font='20px Arial';g.fillText('STATUS: CERVEAU ON  |  PLUS DE SECOND JOB',36,W-40);
+  }
+  draw();
+  document.getElementById('dl').onclick=function(){
+    c.toBlob(function(b){
+      var a=document.createElement('a');
+      a.href=URL.createObjectURL(b);
+      a.download='radar-linkedin-post.png';
+      a.click();
+      setTimeout(function(){URL.revokeObjectURL(a.href)},500);
+    },'image/png');
+  };
+})();
+</script>
+</body>
+</html>
